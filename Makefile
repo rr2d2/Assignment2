@@ -1,6 +1,6 @@
 # a simple makefile for compiling C++ files
 
-CC= g++-4.7 -std=c++11
+CC= g++-4.7 -std=c++11 -g -Wall
 
 all: sort
 
