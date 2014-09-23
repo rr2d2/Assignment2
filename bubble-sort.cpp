@@ -17,7 +17,7 @@ BubbleSort::sort(int A[], int size)			// main entry point
     for (int k=1; k<size;k++) {
         bool cont = false;
             for (int i=0;i<size-k;i++)
-                if(A[i+1]<A[i]){
+                if(A[i+1]<A[i] && ++num_cmps){
                     int temp = A[i];
                     A[i] = A[i+1];
                     A[i+1] = temp;
