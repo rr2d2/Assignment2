@@ -16,7 +16,6 @@ ShellSort::sort(int A[], int size)
   Record number of comparisons in variable num_cmps of class Sort
   */
 	int gap = size/2;
-	int next_gap;
 	while (gap > 0) {
 		for (int i = gap; i < size; i++) {
 			int tmp = A[i];

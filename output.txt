@@ -1,0 +1,11 @@
+Sorted sequence:
+1
+2
+3
+4
+4
+5
+5
+
+Running time: 0.004 ms
+# Comparisons: 0

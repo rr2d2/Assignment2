@@ -43,6 +43,10 @@ public:
 class RadixSort:public Sort {		// RadixSort class
 public:
   void sort(int A[], int size);		// main entry point
+  int digit(int k, int num);  // use countsort for radix-sort
+  int num_of_digits(int num); // determine the number of digits of the largest int
+private:
+  const int base = 10;
 };
 
 #endif //SORT_H_
