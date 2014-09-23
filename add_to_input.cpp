@@ -33,7 +33,7 @@ int main() {
 	if (my_file.is_open()) {
         my_file << num_of_elements;
 		for (int i = 0; i < num_of_elements; i++) {
-			my_file << " " << rand() % biggest_element + 1;
+			my_file << std::endl << rand() % biggest_element + 1;
 		}
 	}
 	my_file.close();

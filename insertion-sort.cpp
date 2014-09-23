@@ -17,10 +17,8 @@ InsertionSort::sort(int A[], int size)				// main entry point
     for (int i = 1; i<size; i++) {
         int temp = A[i];
         int j = i;
-        for (; j>0&& temp<A[j-1]; j--)
+        for (; j>0&& (num_cmps++, temp<A[j-1]); j--)
             A[j] = A[j-1];
         A[j] = temp;
     }
-    
-    
 }

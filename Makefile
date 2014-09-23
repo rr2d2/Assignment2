@@ -31,4 +31,4 @@ sort.o: sort.h option.h sort.cpp
 	$(CC) -c sort.cpp
 
 clean:
-	/bin/rm -f *.o sort
+	/bin/rm -f *.o sort *.txt

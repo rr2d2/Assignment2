@@ -37,7 +37,8 @@ void Option::init(int argc, char** argv)
 
    if (!show_help && alg!='S' && alg!='B' &&
        alg!='I' && alg!='H' && alg!= 'R')
-      throw InvalidArgument();          
+      throw InvalidArgument();
+
 }
 
 
