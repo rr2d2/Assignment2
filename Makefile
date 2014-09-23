@@ -1,6 +1,6 @@
 # a simple makefile for compiling C++ files
 
-CC= /usr/local/bin/g++-4.7 -std=c++11 -g -Wall
+CC= g++-4.7 -std=c++11 -g -Wall
 
 all: sort
 
