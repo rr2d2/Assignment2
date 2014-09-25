@@ -63,6 +63,7 @@ RadixSort::num_of_digits(int num) {
 		else
 			return num_digits;
 	}
+    return 0;
 }
 
 /* returns the digit to sort */	
