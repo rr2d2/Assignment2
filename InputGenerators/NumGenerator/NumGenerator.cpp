@@ -13,7 +13,6 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdexcept>
-#include "generic.h"//remeber to change
 
 using namespace std;
 
@@ -22,7 +21,7 @@ int main(){
         string filename;
         stringstream ss;
         int mod,random;
-        //increasing order
+        /*/increasing order
         for (int i =2; i<6;i++){//ordered files
             ofstream myfile;
             ss <<"inputInc"<<(i-1)<<".txt";//create filename
@@ -55,9 +54,11 @@ int main(){
             myfile.close();
             cout<<"done\n";
             ss.str(string());
-        }
+        }*/
         //random order
         for (int i =2; i<6;i++){//ordered files
+            srand(time(NULL));
+            cout<<time(NULL)<<"  ";
             ofstream myfile;
             ss <<"inputRan"<<(i-1)<<".txt";//create filename
             filename = ss.str();
@@ -66,8 +67,8 @@ int main(){
             myfile <<pow(10,i)<<"   ";//give first number in file count of numbers
             
             for (int j = pow(10,i); 0<j; j--) {//all numbers in order
-                mod = pow(10,i-1);
-                random = rand() %mod;
+                mod = pow(10,i);
+                random = rand()%mod;
                 myfile <<random<<" ";
             }
             

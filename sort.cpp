@@ -138,7 +138,7 @@ int main(int argc, char** argv)
          break;
       case 'R':
          s=new RadixSort();
-         radixsortQ = true;
+         //radixsortQ = true;//dont no the purpose of this but commented out because it wasn't letting radix sort print the amount of comparisons it made
          break;
       }
   

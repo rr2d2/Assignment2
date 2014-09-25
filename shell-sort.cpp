@@ -17,10 +17,10 @@ ShellSort::sort(int A[], int size)
   */
 	int gap = size/2;
 	while (gap > 0) {
-		for (int i = gap; i < size; i++) {
+		for (int i = gap; i < size;num_cmps++, i++) {//comparison
 			int tmp = A[i];
 			int j = i;
-			while (j >= gap && (num_cmps++, tmp<A[j-gap])) {
+			while (j >= gap && (num_cmps++, tmp<A[j-gap])) {//comparison
 				A[j] = A[j-gap];
 				j -= gap;
 			}
