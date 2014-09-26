@@ -1,0 +1,2 @@
+Running time: 44.347 ms
+# Comparisons: 3876686
