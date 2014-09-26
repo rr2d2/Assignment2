@@ -20,7 +20,7 @@ RadixSort::sort(int A[], int size)
 	
 	/* find max */
 	int max_number = A[0];
-	for (int i = 0; i < size;num_cmps++, i++) {
+	for (int i = 0;num_cmps++, i < size;i++) {
 		if (num_cmps++,A[i] > max_number)
 			max_number = A[i];
 	}
