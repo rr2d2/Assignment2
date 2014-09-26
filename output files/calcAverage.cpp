@@ -19,40 +19,91 @@ using namespace std;
 
 int main(){
     try{
-        stringstream ss1,ss2;
-        string filename1,filename2;
-        int num,n;
-        vector<int> vec;
-        
-        for (int i=2; i<6; i++) {
-            ofstream fs;
-            ss1 <<"inputDec"<<(i-1)<<".txt";//create filename
-            filename1 = ss1.str();
-            cout<<filename1<<endl;
-            fs.open (filename1);//create and open file
-            
-            ifstream myfile;
-            ss2 <<"InputInc"<<(i-1)<<".txt";//create filename
-            filename2 = ss2.str();
-            cout<<filename2<<endl;
-            myfile.open (filename2);//create and open file
-            
-            while (myfile>>num) {
-                vec.push_back(num);
-            }
-            n = vec.size();
-            for (int j=0; j<n; j++) {
-               fs<<vec[n-j]<<" ";
-            }
-            
-            fs.close();
-            cout<<"done\n";
-            ss1.str(string());
-            
-            myfile.close();
-            cout<<"done\n";
-            ss2.str(string());
-        }
+        stringstream ss1, ss2;
+	string filename1, filename2,suffix, sort,read;
+	int  comps,comp_sum, n;
+	double rt, rt_sum;
+	vector<string> vec;
+
+	for (int s = 0; s < 5; s++)
+	{
+		switch (s)
+		{
+		case 0:sort = "S";
+			break;
+		case 1:sort = "B";
+			break;
+		case 2:sort = "I";
+			break;
+		case 3:sort = "H";
+			break;
+		case 4:sort = "R";
+			break;
+		default:cout << "first loop wrong\n";
+			break;
+		}
+		for (int i = 0; i < 3; i++)//iterates dec,inc,ran
+		{
+			rt_sum = 0;
+			comp_sum = 0;
+			rt = 0;
+			comps = 0;
+			switch (i)
+			{
+			case 0:suffix = "Dec";
+				break;
+			case 1:suffix = "Inc";
+				break;
+			case 2:suffix = "Ran";
+				break;
+			default:cout << "First loop went too long\n";
+				break;
+			}
+
+			for (int i = 2; i < 6; i++) {//goes through each power 10^2,10^3,10^4,10^5
+                //needs to change to only go 1,2,3 so that it takes different runs
+				//and averages them
+				ifstream myfile;//input file
+				ss2 << "out" <<sort<< suffix << (i - 1) << ".txt";//create filename
+				filename2 = ss2.str();
+				cout << filename2 << endl;
+				myfile.open(filename2);//create and open file
+
+				while (myfile >> read) {//create a vector of items in file
+					vec.push_back(read);
+				}
+
+				if (vec.size() >= 7)
+				{
+					stringstream convert(vec[2]);
+					convert >> rt;
+					stringstream convert2(vec[6]);
+					convert2 >> comps;
+				}
+				rt_sum += rt;
+				comp_sum += comps;
+				vec.clear();
+				myfile.close();
+				cout << "done\n";
+				ss2.str(string());
+			}
+
+			ofstream fs;//output file
+			ss1 << "Average" << sort<<suffix << ".txt";//create filename
+			filename1 = ss1.str();
+			cout << filename1 << endl;
+			fs.open(filename1);//create and open file
+
+			fs << "runtime " << rt_sum / 3 << "\n" << "# comparisons " << comp_sum / 3;
+
+			//write to file here
+			fs.close();
+			cout << "done\n";
+			ss1.str(string());
+			rt = 0;
+			comps = 0;
+		}
+	}
     }
     catch(exception &error){
         cerr << "Error: " << error.what() << endl;
