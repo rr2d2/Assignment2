@@ -20,7 +20,7 @@ ShellSort::sort(int A[], int size)
 		for (int i = gap;num_cmps++,i < size; i++) {//comparison
 			int tmp = A[i];
 			int j = i;
-			while ((num_cmps++,j >= gap) && (num_cmps++, tmp<A[j-gap])) {//comparison
+			while ((num_cmps++,j >= gap) && ( tmp<A[j-gap])) {//comparison
 				A[j] = A[j-gap];
 				j -= gap;
 			}
