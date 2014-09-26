@@ -34,13 +34,13 @@ int main() {
             cout<<filename2<<endl;
             myfile.open (filename2);            //create and open file
             
+            myfile >> n;
             while (myfile>>num) {
                 stack.push(num);
             }
-            fs << stack.size()-1 << " ";        //print num of elements first
+            fs << n << " ";                     //prints num of elements first
             while (!stack.empty()) {
-                if (stack.size() != 1)          //ignore last element
-                    fs<<stack.top()<<" ";       //prints element
+                fs<<stack.top()<<" ";           //prints element
                 stack.pop();                    //pops off top of stack
             }
             
