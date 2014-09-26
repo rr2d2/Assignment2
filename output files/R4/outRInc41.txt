@@ -1,2 +1,2 @@
-Running time: 24.286 ms
-# Comparisons: 1700050
+Running time: 21.715 ms
+No comparisons for radix sort

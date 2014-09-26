@@ -1,2 +1,2 @@
-runtime 0.00333333
-# comparisons 99
+runtime 0.00366667
+# comparisons 100

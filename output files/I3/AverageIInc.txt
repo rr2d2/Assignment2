@@ -1,0 +1,2 @@
+runtime 0.104333
+# comparisons 19999

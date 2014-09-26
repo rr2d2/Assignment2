@@ -18,6 +18,7 @@ do
 	for c in 1 2 3 4
         do
            ./sort -a $a -f input$b$c.txt -o out$a$b$c.txt -t -c
+        echo "$a$b$c"
 	done
   done
   # ===============================================
