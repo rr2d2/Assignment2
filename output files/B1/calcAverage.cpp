@@ -20,14 +20,14 @@ using namespace std;
 int main(){
     try{
         stringstream ss1, ss2;
-	string filename1, filename2,suffix, sort,read;
-	int  comps,comp_sum, n;
+	string filename1, filename2, suffix, sort, read;
+	int  comps, comp_sum, n;
 	double rt, rt_sum;
 	vector<string> vec;
 
-	for (int s = 0; s < 5; s++)
+	for (int s = 0; s < 1; s++)//change to only loop once for testing purpose
 	{
-		switch (s)
+		switch (0)//manually change this for now because of time constraints
 		{
 		case 0:sort = "S";
 			break;
@@ -59,12 +59,12 @@ int main(){
 			default:cout << "First loop went too long\n";
 				break;
 			}
-            
-			for (int i = 0; i <3 ; i++) {//goes through each power 10^2,10^3,10^4,10^5
-                //needs to change to only go 1,2,3 so that it takes different runs
+
+			for (int i = 0; i <3; i++) {//goes through each power 10^2,10^3,10^4,10^5
+				//needs to change to only go 1,2,3 so that it takes different runs
 				//and averages them
 				ifstream myfile;//input file
-				ss2 << "out" <<sort<< suffix <<1<<((i*3)+1) << ".txt";//create filename
+				ss2 << "out" << sort << suffix << 1 << ((i * 3) + 1) << ".txt";//create filename
 				filename2 = ss2.str();
 				cout << filename2 << endl;
 				myfile.open(filename2);//create and open file
@@ -89,7 +89,7 @@ int main(){
 			}
 
 			ofstream fs;//output file
-			ss1 << "Average" << sort<<suffix << ".txt";//create filename
+			ss1 << "Average" << sort << suffix << ".txt";//create filename
 			filename1 = ss1.str();
 			cout << filename1 << endl;
 			fs.open(filename1);//create and open file
