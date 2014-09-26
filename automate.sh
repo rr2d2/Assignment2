@@ -1,3 +1,8 @@
+if ! [ -e sort ]
+then
+    make
+fi
+
 echo “Script Started!”
 
 for a in S B I H R
